@@ -1,0 +1,49 @@
+@use "./variables" as var;
+
+.Navbar {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	min-height: 60px;
+	padding: 50px;
+	color: var.$color-white;
+
+	& .nav-container {
+		display: flex;
+		gap: 40px;
+		align-items: flex-start;
+
+		& .logo {
+			cursor: pointer;
+		}
+
+		& .nav-menu {
+			display: flex;
+			gap: 20px;
+
+			& .menu {
+				cursor: pointer;
+				padding-bottom: 10px;
+				position: relative;
+
+				&::after {
+					content: "";
+					display: block;
+					height: 2px;
+					width: 0;
+					transform: translateX(-50%);
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					background: var.$color-white;
+					transition: width 0.3s ease 0s, left 0.3s ease 0s;
+				}
+
+				&:hover::after,
+				&:active::after {
+					width: 80%;
+				}
+			}
+		}
+	}
+}
