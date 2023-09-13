@@ -1,5 +1,41 @@
 @use "./variables" as var;
 
 .Bottom {
-	
+	display: grid;
+	grid-template-columns: 30% 40% 30%;
+
+	& .img-container {
+		height: 100%;
+		width: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		&-dark {
+			background-image: url('../assets/images/image-about-dark.jpg');
+		}
+		&-light {
+			background-image: url('../assets/images/image-about-light.jpg');
+		}
+	}
+
+	& .about {
+		padding: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 10px;
+
+		& .title {
+			text-transform: uppercase;
+			letter-spacing: 5px;
+			font-weight: 700;
+		}
+
+		& .content {
+			color: var.$color-dark-gray;
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+	}
 }
