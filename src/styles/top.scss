@@ -4,10 +4,10 @@
 	display: grid;
 	grid-template-columns: 60% 40%;
 
-	@media screen and (max-width: var.$breakpoint-m) {
+	@media screen and (max-width: var.$breakpoint-s) {
 		grid-template-columns: auto;
 		grid-template-rows: 45% 55%;
-		height: 100vh;
+		height: 100%;
 	}
 
 	& .img-container {
@@ -20,7 +20,7 @@
 
 	& .content-container {
 		position: relative;
-		padding: 70px;
+		padding: 0 70px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -42,7 +42,7 @@
 			}
 
 			& .title {
-				@media screen and (max-width: var.$breakpoint-m) {
+				@media screen and (max-width: var.$breakpoint-s) {
 					font-size: 26px;
 				}
 			}
@@ -52,7 +52,7 @@
 				font-size: 14px;
 				line-height: 1.5em;
 
-				@media screen and (max-width: var.$breakpoint-m) {
+				@media screen and (max-width: var.$breakpoint-s) {
 					line-height: 1.3em;
 				}
 			}
@@ -85,6 +85,11 @@
 			$BoxH: 50px;
 			$BowW: $BoxH * 2;
 
+			@media screen and (max-width: var.$breakpoint-m) {				
+				$BoxH: 40px;
+				$BowW: $BoxH * 2;
+			}
+
 			position: absolute;
 			left: 0;
 			bottom: 0;
@@ -93,7 +98,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 50%);
 
-			@media screen and (max-width: var.$breakpoint-m) {
+			@media screen and (max-width: var.$breakpoint-s) {
 				left: calc(100% - $BowW);
 				top: -$BoxH;
 			}

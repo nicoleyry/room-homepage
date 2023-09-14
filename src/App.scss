@@ -1,3 +1,5 @@
+@use "../src/styles/variables" as var;
+
 .App {
 	position: relative;
 	width: 100vw;
@@ -5,4 +7,8 @@
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: 65% 35%;
+
+	@media screen and (max-width: var.$breakpoint-s) {
+		height: 100%;
+	}
 }

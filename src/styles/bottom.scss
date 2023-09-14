@@ -4,12 +4,22 @@
 	display: grid;
 	grid-template-columns: 30% 40% 30%;
 
+	@media screen and (max-width: var.$breakpoint-s) {
+		display: flex;
+		flex-direction: column;
+	}
+
 	& .img-container {
 		height: 100%;
 		width: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+
+		@media screen and (max-width: var.$breakpoint-s) {
+			flex: 1;
+			min-height: 40vh;
+		}
 
 		&-dark {
 			background-image: url('../assets/images/image-about-dark.jpg');
@@ -25,6 +35,10 @@
 		flex-direction: column;
 		justify-content: center;
 		gap: 10px;
+
+		@media screen and (max-width: var.$breakpoint-s) {
+			padding: 30px 20px;
+		}
 
 		& .title {
 			text-transform: uppercase;
