@@ -9,6 +9,10 @@ function App() {
 			<Navbar />
 			<Top />
 			<Bottom />
+			<div className="attribution">
+				<span>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. </span>
+				<span>Coded by <a href="https://www.nicoleyry.com/">Nicole Yang</a>.</span>
+			</div>
 		</div>
 	);
 }

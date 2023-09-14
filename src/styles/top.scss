@@ -6,7 +6,7 @@
 
 	@media screen and (max-width: var.$breakpoint-s) {
 		grid-template-columns: auto;
-		grid-template-rows: 45% 55%;
+		grid-template-rows: 1fr auto;
 		height: 100%;
 	}
 
@@ -16,6 +16,9 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		@media screen and (max-width: var.$breakpoint-s) {
+			min-height: 300px;
+		}
 	}
 
 	& .content-container {
