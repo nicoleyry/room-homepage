@@ -1,11 +1,17 @@
 import '../styles/top.scss';
 import ControllerLeft from '../assets/images/icon-angle-left.svg';
 import ControllerRight from '../assets/images/icon-angle-right.svg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { slidesData } from '../slidesData';
 
 export default function Top() {
 	const [slide, setSlide] = useState(1);
+	const mediaQuery = window.matchMedia('(max-width: 500px)');
+	const [smallScreen, setSmallScreen] = useState(false);
+
+	useEffect(() => {
+		mediaQuery.matches ? setSmallScreen(true) : setSmallScreen(false);
+	}, [mediaQuery.matches]);
 
 	let prev = () => {
 		slide === 1 ? setSlide(slidesData.length) : setSlide(n => n - 1);
@@ -17,7 +23,7 @@ export default function Top() {
 	
 	return (
 		<div className='Top'>
-			<div className={`img-container slide-${slide}`} style={{backgroundImage: `url('${slidesData[slide-1]['image']}')`}}></div>
+			<div className={`img-container slide-${slide}`} style={{backgroundImage: `url('${smallScreen ?slidesData[slide-1]['imageMobile'] : slidesData[slide-1]['image']}')`}}></div>
 			<div className='content-container'>
 				<div className="content-slide">
 					<h1 className='title'>{slidesData[slide-1]['title']}</h1>
